@@ -13,66 +13,67 @@
 --						
 --						
 -- =============================================
-
 USE MT_Ibratec
+
 GO
 
-IF OBJECT_ID('[dbo].[Usr_ZZ1010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZZ1010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZZ1010]
-GO
-
-ALTER TABLE [dbo].[Usr_ZZ1010](
-	[Filial] [varchar](2) NOT NULL,
-	[TPLan] [varchar](1) NOT NULL,
-	[CodCli] [varchar](6) NOT NULL,
-	[LojCli] [varchar](2) NOT NULL,
-	[NomCli] [varchar](120) NOT NULL,
-	[FanCli] [varchar](60) NOT NULL,
-	[TipCli] [varchar](1) NOT NULL,
-	[TipFor] [varchar](1) NOT NULL,
-	[EndCli] [varchar](100) NOT NULL,
-	[MunCli] [varchar](60) NOT NULL,
-	[EstCli] [varchar](2) NOT NULL,
-	[BaiCli] [varchar](60) NOT NULL,
-	[CEPCli] [varchar](9) NOT NULL,
-	[CGCCli] [varchar](18) NOT NULL,
-	[DATCli] [varchar](8) NOT NULL,
-	[INSCli] [varchar](15) NOT NULL,
-	[CodMun] [varchar](5) NOT NULL,
-	[CodPai] [varchar](5) NOT NULL,
-	[Pessoa] [varchar](1) NOT NULL,
-	[MoedaL] [varchar](1) NOT NULL,
-	[TMPVis] [varchar](5) NOT NULL,
-	[TMPSTD] [varchar](5) NOT NULL,
-	[B2B] [varchar](5) NOT NULL,
-	[Tel] [varchar](15) NOT NULL,
-	[Vincul] [varchar](5) NOT NULL,
-	[IDRep] [varchar](5) NOT NULL,
-	[PLCRRE] [varchar](5) NOT NULL,
-	[PLFil] [varchar](5) NOT NULL,
-	[TipDoc] [varchar](1) NOT NULL,
-	[ImpMet] [varchar](1) NOT NULL,
-	[Versao] [float] NOT NULL,
-	[ContaC] [varchar](20) NOT NULL,
-	[ContaF] [varchar](20) NOT NULL,
-	[ContaC2] [varchar](20) NOT NULL,
-	[ContaF2] [varchar](20) NOT NULL,
-	[CTAADC] [varchar](20) NOT NULL,
-	[CTAADF] [varchar](20) NOT NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZZ1010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[Usr_ZZ1010] ADD  CONSTRAINT [DF_Usr_ZZ1010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[Usr_ZZ1010]
+  (
+     [Filial]     [VARCHAR](2) NOT NULL,
+     [TPLan]      [VARCHAR](1) NOT NULL,
+     [CodCli]     [VARCHAR](6) NOT NULL,
+     [LojCli]     [VARCHAR](2) NOT NULL,
+     [NomCli]     [VARCHAR](120) NOT NULL,
+     [FanCli]     [VARCHAR](60) NOT NULL,
+     [TipCli]     [VARCHAR](1) NOT NULL,
+     [TipFor]     [VARCHAR](1) NOT NULL,
+     [EndCli]     [VARCHAR](100) NOT NULL,
+     [MunCli]     [VARCHAR](60) NOT NULL,
+     [EstCli]     [VARCHAR](2) NOT NULL,
+     [BaiCli]     [VARCHAR](60) NOT NULL,
+     [CEPCli]     [VARCHAR](9) NOT NULL,
+     [CGCCli]     [VARCHAR](18) NOT NULL,
+     [DATCli]     [VARCHAR](8) NOT NULL,
+     [INSCli]     [VARCHAR](15) NOT NULL,
+     [CodMun]     [VARCHAR](5) NOT NULL,
+     [CodPai]     [VARCHAR](5) NOT NULL,
+     [Pessoa]     [VARCHAR](1) NOT NULL,
+     [MoedaL]     [VARCHAR](1) NOT NULL,
+     [TMPVis]     [VARCHAR](5) NOT NULL,
+     [TMPSTD]     [VARCHAR](5) NOT NULL,
+     [B2B]        [VARCHAR](5) NOT NULL,
+     [Tel]        [VARCHAR](15) NOT NULL,
+     [Vincul]     [VARCHAR](5) NOT NULL,
+     [IDRep]      [VARCHAR](5) NOT NULL,
+     [PLCRRE]     [VARCHAR](5) NOT NULL,
+     [PLFil]      [VARCHAR](5) NOT NULL,
+     [TipDoc]     [VARCHAR](1) NOT NULL,
+     [ImpMet]     [VARCHAR](1) NOT NULL,
+     [Versao]     [FLOAT] NOT NULL,
+     [ContaC]     [VARCHAR](20) NOT NULL,
+     [ContaF]     [VARCHAR](20) NOT NULL,
+     [ContaC2]    [VARCHAR](20) NOT NULL,
+     [ContaF2]    [VARCHAR](20) NOT NULL,
+     [CTAADC]     [VARCHAR](20) NOT NULL,
+     [CTAADF]     [VARCHAR](20) NOT NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZZ1010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
 GO
 
+ALTER TABLE [dbo].[Usr_ZZ1010]
+  ADD CONSTRAINT [DF_Usr_ZZ1010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
+GO
 
 -- =============================================
 -- Nome da Tabela:	Usr_ZZ4010		
@@ -89,63 +90,65 @@ GO
 --						
 --						
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
-IF OBJECT_ID('[dbo].[Usr_ZZ4010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZZ4010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZZ4010]
-GO
-
-CREATE TABLE [dbo].[Usr_ZZ4010](
-	[Filial] [varchar](2) NULL,
-	[Cod] [varchar](20) NOT NULL,
-	[Descricao] [varchar](100) NULL,
-	[LocPad] [varchar](2) NOT NULL,
-	[UM] [varchar](2) NOT NULL,
-	[Grupo] [varchar](4) NOT NULL,
-	[PosIPI] [varchar](10) NOT NULL,
-	[Tipo] [varchar](2) NOT NULL,
-	[TipCon] [varchar](1) NOT NULL,
-	[MCustD] [varchar](1) NOT NULL,
-	[Apropr] [varchar](1) NOT NULL,
-	[TipoDE] [varchar](1) NOT NULL,
-	[Rastro] [varchar](1) NOT NULL,
-	[MRP] [varchar](1) NOT NULL,
-	[CodBar] [varchar](15) NOT NULL,
-	[Locali] [varchar](1) NOT NULL,
-	[Contra] [varchar](1) NOT NULL,
-	[Import] [varchar](1) NOT NULL,
-	[Anuent] [varchar](1) NOT NULL,
-	[TipoCQ] [varchar](1) NOT NULL,
-	[Solici] [varchar](1) NOT NULL,
-	[INSS] [varchar](1) NOT NULL,
-	[FlagSU] [varchar](1) NOT NULL,
-	[ClassV] [varchar](1) NOT NULL,
-	[Midia] [varchar](1) NOT NULL,
-	[EnvoBR] [varchar](1) NOT NULL,
-	[QtdSer] [float] NOT NULL,
-	[Ativo] [varchar](1) NOT NULL,
-	[TipCNV] [varchar](1) NOT NULL,
-	[CpoTen] [varchar](1) NOT NULL,
-	[ImpMet] [varchar](1) NOT NULL,
-	[Versao] [int] NOT NULL,
-	[Conta] [varchar](20) NOT NULL,
-	[Conta2] [varchar](20) NOT NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[DtInclusao] [datetime] NOT NULL,
-	[CodNew] [varchar](20) NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZZ4010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[Usr_ZZ4010] ADD  CONSTRAINT [DF_Usr_ZZ4010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[Usr_ZZ4010]
+  (
+     [Filial]     [VARCHAR](2) NULL,
+     [Cod]        [VARCHAR](20) NOT NULL,
+     [Descricao]  [VARCHAR](100) NULL,
+     [LocPad]     [VARCHAR](2) NOT NULL,
+     [UM]         [VARCHAR](2) NOT NULL,
+     [Grupo]      [VARCHAR](4) NOT NULL,
+     [PosIPI]     [VARCHAR](10) NOT NULL,
+     [Tipo]       [VARCHAR](2) NOT NULL,
+     [TipCon]     [VARCHAR](1) NOT NULL,
+     [MCustD]     [VARCHAR](1) NOT NULL,
+     [Apropr]     [VARCHAR](1) NOT NULL,
+     [TipoDE]     [VARCHAR](1) NOT NULL,
+     [Rastro]     [VARCHAR](1) NOT NULL,
+     [MRP]        [VARCHAR](1) NOT NULL,
+     [CodBar]     [VARCHAR](15) NOT NULL,
+     [Locali]     [VARCHAR](1) NOT NULL,
+     [Contra]     [VARCHAR](1) NOT NULL,
+     [Import]     [VARCHAR](1) NOT NULL,
+     [Anuent]     [VARCHAR](1) NOT NULL,
+     [TipoCQ]     [VARCHAR](1) NOT NULL,
+     [Solici]     [VARCHAR](1) NOT NULL,
+     [INSS]       [VARCHAR](1) NOT NULL,
+     [FlagSU]     [VARCHAR](1) NOT NULL,
+     [ClassV]     [VARCHAR](1) NOT NULL,
+     [Midia]      [VARCHAR](1) NOT NULL,
+     [EnvoBR]     [VARCHAR](1) NOT NULL,
+     [QtdSer]     [FLOAT] NOT NULL,
+     [Ativo]      [VARCHAR](1) NOT NULL,
+     [TipCNV]     [VARCHAR](1) NOT NULL,
+     [CpoTen]     [VARCHAR](1) NOT NULL,
+     [ImpMet]     [VARCHAR](1) NOT NULL,
+     [Versao]     [INT] NOT NULL,
+     [Conta]      [VARCHAR](20) NOT NULL,
+     [Conta2]     [VARCHAR](20) NOT NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [DtInclusao] [DATETIME] NOT NULL,
+     [CodNew]     [VARCHAR](20) NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZZ4010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Usr_ZZ4010]
+  ADD CONSTRAINT [DF_Usr_ZZ4010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
 GO
 
 -- =============================================
@@ -163,89 +166,91 @@ GO
 --						
 --						
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 /****** Object:  Table [dbo].[USR_ZZ5010]    Script Date: 04/05/2017 12:20:28 ******/
-IF OBJECT_ID('[dbo].[Usr_ZZ5010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZZ5010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZZ5010]
-GO
-
-CREATE TABLE [dbo].[USR_ZZ5010](
-	[Filial] [varchar](2) NOT NULL,
-	[TpLan] [varchar](1) NOT NULL,
-	[NumDoc] [varchar](9) NOT NULL,
-	[SerDoc] [varchar](3) NOT NULL,
-	[CodCli] [varchar](6) NOT NULL,
-	[Loja] [varchar](2) NOT NULL,
-	[DatEmi] [varchar](8) NOT NULL,
-	[EstDoc] [varchar](2) NOT NULL,
-	[ValFre] [varchar](16) NOT NULL,
-	[ValSeg] [varchar](16) NOT NULL,
-	[ICMFre] [varchar](16) NOT NULL,
-	[ValBru] [varchar](16) NOT NULL,
-	[ValICM] [varchar](16) NOT NULL,
-	[BasICM] [varchar](16) NOT NULL,
-	[ValIPI] [varchar](16) NOT NULL,
-	[BasIPI] [varchar](16) NOT NULL,
-	[ValMer] [varchar](16) NOT NULL,
-	[BasISS] [varchar](16) NOT NULL,
-	[ValISS] [varchar](16) NOT NULL,
-	[ValCSL] [varchar](16) NOT NULL,
-	[ValDes] [varchar](16) NOT NULL,
-	[CodCFO] [varchar](5) NOT NULL,
-	[Observ] [varchar](30) NOT NULL,
-	[Propri] [varchar](1) NOT NULL,
-	[Tipo] [varchar](1) NOT NULL,
-	[CampoA] [varchar](1) NOT NULL,
-	[BasCOF] [varchar](16) NOT NULL,
-	[ValCOF] [varchar](16) NOT NULL,
-	[BasPIS] [varchar](16) NOT NULL,
-	[ValPIS] [varchar](16) NOT NULL,
-	[Cond] [varchar](3) NOT NULL,
-	[TipoCL] [varchar](1) NOT NULL,
-	[Especi] [varchar](5) NOT NULL,
-	[ChvNfe] [varchar](44) NOT NULL,
-	[DocSai] [varchar](9) NOT NULL,
-	[SerSai] [varchar](3) NOT NULL,
-	[ValDsc] [varchar](16) NOT NULL,
-	[DatDig] [varchar](8) NOT NULL,
-	[BasFre] [varchar](16) NOT NULL,
-	[ValIRF] [varchar](16) NOT NULL,
-	[NotOri] [varchar](6) NOT NULL,
-	[SerOri] [varchar](3) NOT NULL,
-	[BasINS] [varchar](16) NOT NULL,
-	[ValINS] [varchar](16) NOT NULL,
-	[ReduIC] [varchar](1) NOT NULL,
-	[ReduIP] [varchar](1) NOT NULL,
-	[DocEnt] [varchar](9) NOT NULL,
-	[SerEnt] [varchar](3) NOT NULL,
-	[OrigLa] [varchar](2) NOT NULL,
-	[Status] [varchar](5) NOT NULL,
-	[RecbMt] [varchar](8) NOT NULL,
-	[TipLan] [varchar](1) NOT NULL,
-	[TpFre] [varchar](1) NOT NULL,
-	[ImpMet] [varchar](1) NOT NULL,
-	[DtOcor] [datetime] NOT NULL,
-	[HrOcor] [varchar](20) NOT NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[DtOcom] [datetime] NOT NULL,
-	[DtFat] [datetime] NOT NULL,
-	[Objid] [float] NOT NULL,
-	[CodSef] [varchar](3) NOT NULL,
-	[RecSef] [varchar](50) NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZZ5010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[USR_ZZ5010] ADD  CONSTRAINT [DF_USR_ZZ5010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[USR_ZZ5010]
+  (
+     [Filial]     [VARCHAR](2) NOT NULL,
+     [TpLan]      [VARCHAR](1) NOT NULL,
+     [NumDoc]     [VARCHAR](9) NOT NULL,
+     [SerDoc]     [VARCHAR](3) NOT NULL,
+     [CodCli]     [VARCHAR](6) NOT NULL,
+     [Loja]       [VARCHAR](2) NOT NULL,
+     [DatEmi]     [VARCHAR](8) NOT NULL,
+     [EstDoc]     [VARCHAR](2) NOT NULL,
+     [ValFre]     [VARCHAR](16) NOT NULL,
+     [ValSeg]     [VARCHAR](16) NOT NULL,
+     [ICMFre]     [VARCHAR](16) NOT NULL,
+     [ValBru]     [VARCHAR](16) NOT NULL,
+     [ValICM]     [VARCHAR](16) NOT NULL,
+     [BasICM]     [VARCHAR](16) NOT NULL,
+     [ValIPI]     [VARCHAR](16) NOT NULL,
+     [BasIPI]     [VARCHAR](16) NOT NULL,
+     [ValMer]     [VARCHAR](16) NOT NULL,
+     [BasISS]     [VARCHAR](16) NOT NULL,
+     [ValISS]     [VARCHAR](16) NOT NULL,
+     [ValCSL]     [VARCHAR](16) NOT NULL,
+     [ValDes]     [VARCHAR](16) NOT NULL,
+     [CodCFO]     [VARCHAR](5) NOT NULL,
+     [Observ]     [VARCHAR](30) NOT NULL,
+     [Propri]     [VARCHAR](1) NOT NULL,
+     [Tipo]       [VARCHAR](1) NOT NULL,
+     [CampoA]     [VARCHAR](1) NOT NULL,
+     [BasCOF]     [VARCHAR](16) NOT NULL,
+     [ValCOF]     [VARCHAR](16) NOT NULL,
+     [BasPIS]     [VARCHAR](16) NOT NULL,
+     [ValPIS]     [VARCHAR](16) NOT NULL,
+     [Cond]       [VARCHAR](3) NOT NULL,
+     [TipoCL]     [VARCHAR](1) NOT NULL,
+     [Especi]     [VARCHAR](5) NOT NULL,
+     [ChvNfe]     [VARCHAR](44) NOT NULL,
+     [DocSai]     [VARCHAR](9) NOT NULL,
+     [SerSai]     [VARCHAR](3) NOT NULL,
+     [ValDsc]     [VARCHAR](16) NOT NULL,
+     [DatDig]     [VARCHAR](8) NOT NULL,
+     [BasFre]     [VARCHAR](16) NOT NULL,
+     [ValIRF]     [VARCHAR](16) NOT NULL,
+     [NotOri]     [VARCHAR](6) NOT NULL,
+     [SerOri]     [VARCHAR](3) NOT NULL,
+     [BasINS]     [VARCHAR](16) NOT NULL,
+     [ValINS]     [VARCHAR](16) NOT NULL,
+     [ReduIC]     [VARCHAR](1) NOT NULL,
+     [ReduIP]     [VARCHAR](1) NOT NULL,
+     [DocEnt]     [VARCHAR](9) NOT NULL,
+     [SerEnt]     [VARCHAR](3) NOT NULL,
+     [OrigLa]     [VARCHAR](2) NOT NULL,
+     [Status]     [VARCHAR](5) NOT NULL,
+     [RecbMt]     [VARCHAR](8) NOT NULL,
+     [TipLan]     [VARCHAR](1) NOT NULL,
+     [TpFre]      [VARCHAR](1) NOT NULL,
+     [ImpMet]     [VARCHAR](1) NOT NULL,
+     [DtOcor]     [DATETIME] NOT NULL,
+     [HrOcor]     [VARCHAR](20) NOT NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [DtOcom]     [DATETIME] NOT NULL,
+     [DtFat]      [DATETIME] NOT NULL,
+     [Objid]      [FLOAT] NOT NULL,
+     [CodSef]     [VARCHAR](3) NOT NULL,
+     [RecSef]     [VARCHAR](50) NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZZ5010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[USR_ZZ5010]
+  ADD CONSTRAINT [DF_USR_ZZ5010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
 GO
 
 -- =============================================
@@ -264,114 +269,117 @@ GO
 --						
 -- =============================================
 USE [MT_Ibratec]
+
 GO
 
-IF OBJECT_ID('[dbo].[Usr_ZZ3010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZZ3010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZZ3010]
-GO
-
-CREATE TABLE [dbo].[USR_ZZ3010](
-	[Filial] [varchar](2) NOT NULL,
-	[TpLan] [varchar](1) NOT NULL,
-	[NumIte] [varchar](2) NOT NULL,
-	[CodZer] [varchar](5) NOT NULL,
-	[CodPro] [varchar](20) NOT NULL,
-	[UniMed] [varchar](2) NOT NULL,
-	[Qtdven] [varchar](16) NULL,
-	[ValVen] [varchar](18) NOT NULL,
-	[ValTot] [varchar](16) NOT NULL,
-	[ValIPI] [varchar](16) NOT NULL,
-	[ValICM] [varchar](16) NOT NULL,
-	[Grupo] [varchar](4) NOT NULL,
-	[Tp] [varchar](2) NOT NULL,
-	[NumSeq] [varchar](6) NOT NULL,
-	[OrigLa] [varchar](2) NOT NULL,
-	[CodTes] [varchar](3) NOT NULL,
-	[CodCFO] [varchar](5) NOT NULL,
-	[PerDes] [varchar](7) NOT NULL,
-	[PerIPI] [varchar](7) NOT NULL,
-	[PerICM] [varchar](7) NOT NULL,
-	[NumPed] [varchar](6) NOT NULL,
-	[ItemPV] [varchar](2) NOT NULL,
-	[CodCli] [varchar](6) NOT NULL,
-	[Loja] [varchar](2) NOT NULL,
-	[CodLoc] [varchar](2) NOT NULL,
-	[DatEmi] [varchar](8) NOT NULL,
-	[SerDoc] [varchar](3) NOT NULL,
-	[TipDoc] [varchar](1) NOT NULL,
-	[NumDoc] [varchar](9) NOT NULL,
-	[EstDoc] [varchar](2) NOT NULL,
-	[BasIPI] [varchar](16) NOT NULL,
-	[BasICM] [varchar](16) NOT NULL,
-	[TipICM] [varchar](1) NOT NULL,
-	[TipIPI] [varchar](1) NOT NULL,
-	[TipISS] [varchar](1) NOT NULL,
-	[PosIPI] [varchar](8) NOT NULL,
-	[SitTri] [varchar](3) NOT NULL,
-	[ValDsc] [varchar](16) NOT NULL,
-	[Descri] [varchar](60) NOT NULL,
-	[CoCIAP] [varchar](1) NOT NULL,
-	[CampoA] [varchar](1) NOT NULL,
-	[BasCOF] [varchar](16) NOT NULL,
-	[ValCOF] [varchar](16) NOT NULL,
-	[AliCOF] [varchar](6) NOT NULL,
-	[BasPIS] [varchar](16) NOT NULL,
-	[ValPIS] [varchar](16) NOT NULL,
-	[DatDig] [varchar](8) NOT NULL,
-	[DocSai] [varchar](9) NOT NULL,
-	[SerSai] [varchar](3) NOT NULL,
-	[AliPis] [varchar](6) NOT NULL,
-	[TipCom] [varchar](1) NOT NULL,
-	[VarFre] [varchar](16) NOT NULL,
-	[TipLan] [varchar](1) NOT NULL,
-	[ImpMet] [varchar](1) NOT NULL,
-	[DtOcor] [datetime] NOT NULL,
-	[CCusto] [varchar](9) NOT NULL,
-	[Conta] [varchar](20) NOT NULL,
-	[HrOcor] [varchar](20) NOT NULL,
-	[NotOri] [varchar](9) NOT NULL,
-	[SerOri] [varchar](3) NOT NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[DtOCom] [datetime] NOT NULL,
-	[DtOFat] [datetime] NOT NULL,
-	[BrICMS] [varchar](16) NOT NULL,
-	[ICMSRe] [varchar](16) NOT NULL,
-	[BasISS] [varchar](16) NOT NULL,
-	[AlqISS] [varchar](6) NOT NULL,
-	[ValISS] [varchar](16) NOT NULL,
-	[BasINS] [varchar](16) NOT NULL,
-	[AlqINS] [varchar](6) NOT NULL,
-	[ValINS] [varchar](16) NOT NULL,
-	[BasIRF] [varchar](16) NOT NULL,
-	[AlqIRF] [varchar](6) NOT NULL,
-	[ValIRF] [varchar](16) NOT NULL,
-	[AlqPIS] [varchar](6) NOT NULL,
-	[AlqCOF] [varchar](6) NOT NULL,
-	[BasCSL] [varchar](16) NOT NULL,
-	[AlqCSL] [varchar](6) NOT NULL,
-	[ValCSL] [varchar](16) NOT NULL,
-	[BasIMS] [varchar](16) NOT NULL,
-	[AlqIMS] [varchar](6) NOT NULL,
-	[ValIMS] [varchar](16) NOT NULL,
-	[BasIM6] [varchar](16) NOT NULL,
-	[AlqIM6] [varchar](6) NOT NULL,
-	[ValIM6] [varchar](16) NOT NULL,
-	[ValDes] [varchar](16) NULL,
-	[Objid] [float] NOT NULL,
-	[ObjidI] [float] NOT NULL,
-	[CodNew] [varchar](20) NULL,
-	[IteOri] [varchar](4) NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZZ3010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[USR_ZZ3010] ADD  CONSTRAINT [DF_USR_ZZ3010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[USR_ZZ3010]
+  (
+     [Filial]     [VARCHAR](2) NOT NULL,
+     [TpLan]      [VARCHAR](1) NOT NULL,
+     [NumIte]     [VARCHAR](2) NOT NULL,
+     [CodZer]     [VARCHAR](5) NOT NULL,
+     [CodPro]     [VARCHAR](20) NOT NULL,
+     [UniMed]     [VARCHAR](2) NOT NULL,
+     [Qtdven]     [VARCHAR](16) NULL,
+     [ValVen]     [VARCHAR](18) NOT NULL,
+     [ValTot]     [VARCHAR](16) NOT NULL,
+     [ValIPI]     [VARCHAR](16) NOT NULL,
+     [ValICM]     [VARCHAR](16) NOT NULL,
+     [Grupo]      [VARCHAR](4) NOT NULL,
+     [Tp]         [VARCHAR](2) NOT NULL,
+     [NumSeq]     [VARCHAR](6) NOT NULL,
+     [OrigLa]     [VARCHAR](2) NOT NULL,
+     [CodTes]     [VARCHAR](3) NOT NULL,
+     [CodCFO]     [VARCHAR](5) NOT NULL,
+     [PerDes]     [VARCHAR](7) NOT NULL,
+     [PerIPI]     [VARCHAR](7) NOT NULL,
+     [PerICM]     [VARCHAR](7) NOT NULL,
+     [NumPed]     [VARCHAR](6) NOT NULL,
+     [ItemPV]     [VARCHAR](2) NOT NULL,
+     [CodCli]     [VARCHAR](6) NOT NULL,
+     [Loja]       [VARCHAR](2) NOT NULL,
+     [CodLoc]     [VARCHAR](2) NOT NULL,
+     [DatEmi]     [VARCHAR](8) NOT NULL,
+     [SerDoc]     [VARCHAR](3) NOT NULL,
+     [TipDoc]     [VARCHAR](1) NOT NULL,
+     [NumDoc]     [VARCHAR](9) NOT NULL,
+     [EstDoc]     [VARCHAR](2) NOT NULL,
+     [BasIPI]     [VARCHAR](16) NOT NULL,
+     [BasICM]     [VARCHAR](16) NOT NULL,
+     [TipICM]     [VARCHAR](1) NOT NULL,
+     [TipIPI]     [VARCHAR](1) NOT NULL,
+     [TipISS]     [VARCHAR](1) NOT NULL,
+     [PosIPI]     [VARCHAR](8) NOT NULL,
+     [SitTri]     [VARCHAR](3) NOT NULL,
+     [ValDsc]     [VARCHAR](16) NOT NULL,
+     [Descri]     [VARCHAR](60) NOT NULL,
+     [CoCIAP]     [VARCHAR](1) NOT NULL,
+     [CampoA]     [VARCHAR](1) NOT NULL,
+     [BasCOF]     [VARCHAR](16) NOT NULL,
+     [ValCOF]     [VARCHAR](16) NOT NULL,
+     [AliCOF]     [VARCHAR](6) NOT NULL,
+     [BasPIS]     [VARCHAR](16) NOT NULL,
+     [ValPIS]     [VARCHAR](16) NOT NULL,
+     [DatDig]     [VARCHAR](8) NOT NULL,
+     [DocSai]     [VARCHAR](9) NOT NULL,
+     [SerSai]     [VARCHAR](3) NOT NULL,
+     [AliPis]     [VARCHAR](6) NOT NULL,
+     [TipCom]     [VARCHAR](1) NOT NULL,
+     [VarFre]     [VARCHAR](16) NOT NULL,
+     [TipLan]     [VARCHAR](1) NOT NULL,
+     [ImpMet]     [VARCHAR](1) NOT NULL,
+     [DtOcor]     [DATETIME] NOT NULL,
+     [CCusto]     [VARCHAR](9) NOT NULL,
+     [Conta]      [VARCHAR](20) NOT NULL,
+     [HrOcor]     [VARCHAR](20) NOT NULL,
+     [NotOri]     [VARCHAR](9) NOT NULL,
+     [SerOri]     [VARCHAR](3) NOT NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [DtOCom]     [DATETIME] NOT NULL,
+     [DtOFat]     [DATETIME] NOT NULL,
+     [BrICMS]     [VARCHAR](16) NOT NULL,
+     [ICMSRe]     [VARCHAR](16) NOT NULL,
+     [BasISS]     [VARCHAR](16) NOT NULL,
+     [AlqISS]     [VARCHAR](6) NOT NULL,
+     [ValISS]     [VARCHAR](16) NOT NULL,
+     [BasINS]     [VARCHAR](16) NOT NULL,
+     [AlqINS]     [VARCHAR](6) NOT NULL,
+     [ValINS]     [VARCHAR](16) NOT NULL,
+     [BasIRF]     [VARCHAR](16) NOT NULL,
+     [AlqIRF]     [VARCHAR](6) NOT NULL,
+     [ValIRF]     [VARCHAR](16) NOT NULL,
+     [AlqPIS]     [VARCHAR](6) NOT NULL,
+     [AlqCOF]     [VARCHAR](6) NOT NULL,
+     [BasCSL]     [VARCHAR](16) NOT NULL,
+     [AlqCSL]     [VARCHAR](6) NOT NULL,
+     [ValCSL]     [VARCHAR](16) NOT NULL,
+     [BasIMS]     [VARCHAR](16) NOT NULL,
+     [AlqIMS]     [VARCHAR](6) NOT NULL,
+     [ValIMS]     [VARCHAR](16) NOT NULL,
+     [BasIM6]     [VARCHAR](16) NOT NULL,
+     [AlqIM6]     [VARCHAR](6) NOT NULL,
+     [ValIM6]     [VARCHAR](16) NOT NULL,
+     [ValDes]     [VARCHAR](16) NULL,
+     [Objid]      [FLOAT] NOT NULL,
+     [ObjidI]     [FLOAT] NOT NULL,
+     [CodNew]     [VARCHAR](20) NULL,
+     [IteOri]     [VARCHAR](4) NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZZ3010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[USR_ZZ3010]
+  ADD CONSTRAINT [DF_USR_ZZ3010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
 GO
 
 -- =============================================
@@ -389,47 +397,49 @@ GO
 --						
 --						
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
-IF OBJECT_ID('[dbo].[Usr_ZR6010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZR6010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZR6010]
-GO
-
-CREATE TABLE [dbo].[USR_ZR6010](
-	[Filial] [varchar](2) NOT NULL,
-	[Doc] [varchar](9) NOT NULL,
-	[Serie] [varchar](3) NOT NULL,
-	[Fornec] [varchar](6) NOT NULL,
-	[Loja] [varchar](2) NOT NULL,
-	[ItemNF] [varchar](50) NULL,
-	[Item] [varchar](2) NOT NULL,
-	[Perc] [varchar](10) NOT NULL,
-	[CC] [varchar](9) NOT NULL,
-	[Conta] [varchar](20) NOT NULL,
-	[ItemCT] [varchar](9) NOT NULL,
-	[CLVL] [varchar](9) NOT NULL,
-	[Custo1] [float] NOT NULL,
-	[Custo2] [float] NOT NULL,
-	[Custo3] [float] NOT NULL,
-	[Custo4] [float] NOT NULL,
-	[Custo5] [float] NOT NULL,
-	[ImpMet] [varchar](1) NOT NULL,
-	[DtOcorCom] [datetime] NOT NULL,
-	[HrOcor] [varchar](20) NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZR6010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[USR_ZR6010] ADD  CONSTRAINT [DF_USR_ZR6010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[USR_ZR6010]
+  (
+     [Filial]     [VARCHAR](2) NOT NULL,
+     [Doc]        [VARCHAR](9) NOT NULL,
+     [Serie]      [VARCHAR](3) NOT NULL,
+     [Fornec]     [VARCHAR](6) NOT NULL,
+     [Loja]       [VARCHAR](2) NOT NULL,
+     [ItemNF]     [VARCHAR](50) NULL,
+     [Item]       [VARCHAR](2) NOT NULL,
+     [Perc]       [VARCHAR](10) NOT NULL,
+     [CC]         [VARCHAR](9) NOT NULL,
+     [Conta]      [VARCHAR](20) NOT NULL,
+     [ItemCT]     [VARCHAR](9) NOT NULL,
+     [CLVL]       [VARCHAR](9) NOT NULL,
+     [Custo1]     [FLOAT] NOT NULL,
+     [Custo2]     [FLOAT] NOT NULL,
+     [Custo3]     [FLOAT] NOT NULL,
+     [Custo4]     [FLOAT] NOT NULL,
+     [Custo5]     [FLOAT] NOT NULL,
+     [ImpMet]     [VARCHAR](1) NOT NULL,
+     [DtOcorCom]  [DATETIME] NOT NULL,
+     [HrOcor]     [VARCHAR](20) NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZR6010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[USR_ZR6010]
+  ADD CONSTRAINT [DF_USR_ZR6010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
 GO
 
 -- =============================================
@@ -447,84 +457,89 @@ GO
 --						
 --						
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
-IF OBJECT_ID('[dbo].[Usr_ZI5010]', 'U') IS NOT NULL
+IF Object_id('[dbo].[Usr_ZI5010]', 'U') IS NOT NULL
   DROP TABLE [dbo].[Usr_ZI5010]
+
 GO
 
 USE [MT_Ibratec]
-GO
-
-CREATE TABLE [dbo].[USR_ZI5010](
-	[Filial] [varchar](2) NOT NULL,
-	[Doc] [varchar](9) NOT NULL,
-	[Serie] [varchar](3) NOT NULL,
-	[Espec] [varchar](5) NOT NULL,
-	[Fornec] [varchar](6) NOT NULL,
-	[Loja] [varchar](2) NOT NULL,
-	[TPImp] [varchar](1) NOT NULL,
-	[DocImp] [varchar](50) NOT NULL,
-	[BsPIS] [float] NOT NULL,
-	[AlPIS] [float] NOT NULL,
-	[VlPIS] [float] NOT NULL,
-	[BsCOF] [float] NOT NULL,
-	[AlCOF] [float] NOT NULL,
-	[VlCOF] [float] NOT NULL,
-	[ACDRAW] [varchar](20) NOT NULL,
-	[DtPPIS] [varchar](8) NOT NULL,
-	[DtPCOF] [varchar](8) NOT NULL,
-	[Local] [varchar](1) NOT NULL,
-	[NDI] [varchar](12) NOT NULL,
-	[DtDI] [varchar](8) NOT NULL,
-	[LocDes] [varchar](30) NOT NULL,
-	[UFDes] [varchar](2) NOT NULL,
-	[DtDes] [varchar](8) NOT NULL,
-	[CodExp] [varchar](6) NOT NULL,
-	[NaDic] [varchar](3) NOT NULL,
-	[SQADic] [varchar](3) NOT NULL,
-	[CodFab] [varchar](6) NOT NULL,
-	[VdeSDI] [float] NOT NULL,
-	[BCImp] [float] NOT NULL,
-	[DsPAD] [float] NOT NULL,
-	[VlrII] [float] NOT NULL,
-	[VlrIOF] [float] NOT NULL,
-	[Item] [varchar](4) NOT NULL,
-	[LojExp] [varchar](2) NOT NULL,
-	[LojFab] [varchar](2) NOT NULL,
-	[VTrans] [varchar](1) NOT NULL,
-	[VaFRMM] [float] NOT NULL,
-	[Interm] [varchar](1) NOT NULL,
-	[CNPJAE] [varchar](14) NOT NULL,
-	[UFTerc] [varchar](2) NOT NULL,
-	[D_E_L_E_T_] [varchar](1) NOT NULL,
-	[Objid] [float] NOT NULL,
-	[ObjidI] [float] NOT NULL,
-	[StatusInt] [int] NOT NULL,
-	[R_E_C_N_O_] [int] IDENTITY(1,1) NOT NULL,
- CONSTRAINT [ZI5010_PK] PRIMARY KEY CLUSTERED 
-(
-	[R_E_C_N_O_] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
-) ON [PRIMARY]
 
 GO
 
-ALTER TABLE [dbo].[USR_ZI5010] ADD  CONSTRAINT [DF_USR_ZI5010_StatusInt]  DEFAULT ((0)) FOR [StatusInt]
+CREATE TABLE [dbo].[USR_ZI5010]
+  (
+     [Filial]     [VARCHAR](2) NOT NULL,
+     [Doc]        [VARCHAR](9) NOT NULL,
+     [Serie]      [VARCHAR](3) NOT NULL,
+     [Espec]      [VARCHAR](5) NOT NULL,
+     [Fornec]     [VARCHAR](6) NOT NULL,
+     [Loja]       [VARCHAR](2) NOT NULL,
+     [TPImp]      [VARCHAR](1) NOT NULL,
+     [DocImp]     [VARCHAR](50) NOT NULL,
+     [BsPIS]      [FLOAT] NOT NULL,
+     [AlPIS]      [FLOAT] NOT NULL,
+     [VlPIS]      [FLOAT] NOT NULL,
+     [BsCOF]      [FLOAT] NOT NULL,
+     [AlCOF]      [FLOAT] NOT NULL,
+     [VlCOF]      [FLOAT] NOT NULL,
+     [ACDRAW]     [VARCHAR](20) NOT NULL,
+     [DtPPIS]     [VARCHAR](8) NOT NULL,
+     [DtPCOF]     [VARCHAR](8) NOT NULL,
+     [Local]      [VARCHAR](1) NOT NULL,
+     [NDI]        [VARCHAR](12) NOT NULL,
+     [DtDI]       [VARCHAR](8) NOT NULL,
+     [LocDes]     [VARCHAR](30) NOT NULL,
+     [UFDes]      [VARCHAR](2) NOT NULL,
+     [DtDes]      [VARCHAR](8) NOT NULL,
+     [CodExp]     [VARCHAR](6) NOT NULL,
+     [NaDic]      [VARCHAR](3) NOT NULL,
+     [SQADic]     [VARCHAR](3) NOT NULL,
+     [CodFab]     [VARCHAR](6) NOT NULL,
+     [VdeSDI]     [FLOAT] NOT NULL,
+     [BCImp]      [FLOAT] NOT NULL,
+     [DsPAD]      [FLOAT] NOT NULL,
+     [VlrII]      [FLOAT] NOT NULL,
+     [VlrIOF]     [FLOAT] NOT NULL,
+     [Item]       [VARCHAR](4) NOT NULL,
+     [LojExp]     [VARCHAR](2) NOT NULL,
+     [LojFab]     [VARCHAR](2) NOT NULL,
+     [VTrans]     [VARCHAR](1) NOT NULL,
+     [VaFRMM]     [FLOAT] NOT NULL,
+     [Interm]     [VARCHAR](1) NOT NULL,
+     [CNPJAE]     [VARCHAR](14) NOT NULL,
+     [UFTerc]     [VARCHAR](2) NOT NULL,
+     [D_E_L_E_T_] [VARCHAR](1) NOT NULL,
+     [Objid]      [FLOAT] NOT NULL,
+     [ObjidI]     [FLOAT] NOT NULL,
+     [StatusInt]  [INT] NOT NULL,
+     [R_E_C_N_O_] [INT] IDENTITY(1, 1) NOT NULL,
+     CONSTRAINT [ZI5010_PK] PRIMARY KEY CLUSTERED ( [R_E_C_N_O_] ASC )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  )
+ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[USR_ZI5010]
+  ADD CONSTRAINT [DF_USR_ZI5010_StatusInt] DEFAULT ((0)) FOR [StatusInt]
+
 GO
 
 USE [MT_Ibratec]
+
 GO
 
 /****** Object:  StoredProcedure [dbo].[USR_SP_IntegraCliFor]    Script Date: 04/05/2017 13:53:41 ******/
 SET ANSI_NULLS ON
+
 GO
 
 SET QUOTED_IDENTIFIER ON
-GO
 
+GO
 
 -- =============================================
 -- Author:		Fernando Lima
@@ -532,7 +547,16 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela de cadastro de Clientes e Fornecedores do 
 --				Metrics "CRM_Clientes"  para a tabela de integração Local "Usr_ZZ1010"
 -- =============================================
-ALTER PROCEDURE [dbo].[USR_SP_IntegraCliFor] (@cod    AS VARCHAR(20),
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[USR_SP_IntegraCliFor]'
+                  AND SPECIFIC_NAME = N'[dbo].[USR_SP_IntegraCliFor]')
+  DROP PROCEDURE [dbo].[[USR_SP_IntegraCliFor]
+
+GO
+
+CREATE PROCEDURE [dbo].[Usr_sp_integraclifor] (@cod    AS VARCHAR(20),
                                                @versao AS INT)
 AS
     INSERT INTO USR_ZZ1010
@@ -637,21 +661,11 @@ AS
     WHERE  Crm_Clientes.CodCliente = @cod
            AND Crm_Clientes.Version = @versao
 
-
 GO
-
 
 USE [MT_Ibratec]
+
 GO
-
-/****** Object:  StoredProcedure [dbo].[Usr_SP_IntegraProdutos]    Script Date: 04/05/2017 13:56:55 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
 
 -- =============================================
 -- Author:		Fernando Lima
@@ -659,48 +673,56 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela de cadastro de Produtos do Metrics "ItensEstoque" 
 -- para a tabela de integração Local "Usr_ZZ4010"
 -- =============================================
-ALTER PROCEDURE [dbo].[Usr_SP_IntegraProdutos](@cod    AS VARCHAR(20),
-                                                     @versao AS INT)
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraProdutos]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraProdutos]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraProdutos]
+
+GO
+
+CREATE PROCEDURE [dbo].[Usr_sp_integraprodutos](@cod    AS VARCHAR(20),
+                                                @versao AS INT)
 AS
     INSERT INTO USR_ZZ4010
                 (Filial,
-Cod,
-Descricao,
-LocPad,
-UM,
-Grupo,
-PosIPI,
-Tipo,
-TipCon,
-MCustD,
-Apropr,
-TipoDE,
-Rastro,
-MRP,
-CodBar,
-Locali,
-Contra,
-Import,
-Anuent,
-TipoCQ,
-Solici,
-INSS,
-FlagSU,
-ClassV,
-Midia,
-EnvoBR,
-QtdSer,
-Ativo,
-TipCNV,
-CpoTen,
-ImpMet,
-Versao,
-Conta,
-Conta2,
-D_E_L_E_T_,
-DtInclusao,
-CodNew
-)
+                 Cod,
+                 Descricao,
+                 LocPad,
+                 UM,
+                 Grupo,
+                 PosIPI,
+                 Tipo,
+                 TipCon,
+                 MCustD,
+                 Apropr,
+                 TipoDE,
+                 Rastro,
+                 MRP,
+                 CodBar,
+                 Locali,
+                 Contra,
+                 Import,
+                 Anuent,
+                 TipoCQ,
+                 Solici,
+                 INSS,
+                 FlagSU,
+                 ClassV,
+                 Midia,
+                 EnvoBR,
+                 QtdSer,
+                 Ativo,
+                 TipCNV,
+                 CpoTen,
+                 ImpMet,
+                 Versao,
+                 Conta,
+                 Conta2,
+                 D_E_L_E_T_,
+                 DtInclusao,
+                 CodNew)
     SELECT '01'                                                                                                                  AS FILIAL,
            RIGHT('00000000000000000000'
                  + CONVERT(VARCHAR, Isnull(Rtrim(Upper(ItensEstoque.CodItem)), '')), 20) COLLATE sql_latin1_general_cp1251_ci_as AS CODPRO,
@@ -852,19 +874,10 @@ CodNew
            AND ItensEstoque.CodItem = @cod
            AND ItensEstoque.Version = @versao
 
-
-
 GO
-
 
 USE [MT_Ibratec]
-GO
 
-/****** Object:  StoredProcedure [dbo].[Usr_SP_IntegraNotasFiscais]    Script Date: 04/05/2017 13:58:06 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
@@ -873,8 +886,22 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela de Cabeçalho de Notas Fiscais de Saída e Entrada
 --				Metrics "NotasFiscais, EstNotasFiscaisEntrada"  para a tabela de integração Local "Usr_ZZ5010"
 -- =============================================
+-- =============================================
+-- Author:		Fernando Lima
+-- Create date: 15/05/2013
+-- Description:	Carregas as informações sobre as alterações na tabela de cadastro de Produtos do Metrics "ItensEstoque" 
+-- para a tabela de integração Local "Usr_ZZ4010"
+-- =============================================
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraNotasFiscais]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraNotasFiscais]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraNotasFiscais]
 
-ALTER PROCEDURE [dbo].[Usr_SP_IntegraNotasFiscais]
+GO
+
+ALTER PROCEDURE [dbo].[Usr_sp_integranotasfiscais]
 AS
     DECLARE @dtocorFat DATETIME
     DECLARE @dtocorCom DATETIME
@@ -1406,28 +1433,28 @@ AS
 
     DEALLOCATE xeventos
 
-
 GO
-
 
 USE [MT_Ibratec]
+
 GO
 
-/****** Object:  StoredProcedure [dbo].[Usr_SP_IntegraItensNotas]    Script Date: 04/05/2017 14:03:45 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
--- =============================================
+-- ===========================================
 -- Author:		Fernando Lima
 -- Create date: 17/05/2013
 -- Description:	Carregas as informações sobre as alterações na tabela de Itens de Fiscais de Estrada e Saída do Metrics 
 --          	"ItemNota e ESTItemNotaEntrada" para a tabela de integração Local "Usr_ZZ3010"
 -- =============================================
-CREATE PROCEDURE [dbo].[Usr_SP_IntegraItensNotas]
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraItensNotas]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraItensNotas]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraItensNotas]
+
+GO
+
+CREATE PROCEDURE [dbo].[Usr_sp_integraitensnotas]
 AS
     DECLARE @dtocorFat DATETIME
     DECLARE @dtocorCom DATETIME
@@ -2253,19 +2280,11 @@ AS
 
     DEALLOCATE xeventos
 
-
 GO
 
 USE [MT_Ibratec]
-GO
 
-/****** Object:  StoredProcedure [dbo].[Usr_SP_IntegraRateioFin]    Script Date: 04/05/2017 14:07:34 ******/
-SET ANSI_NULLS ON
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 --=============================================
 --Author:		Fernando Lima
@@ -2273,7 +2292,16 @@ GO
 --Description:	Carregas as informações sobre rateios financeiros das Notas Fiscais de Entrada 
 --         	 para a tabela de integração local"Usr_ZR6010"
 --=============================================
-ALTER PROCEDURE [dbo].[Usr_SP_IntegraRateioFin]
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraRateioFin]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraRateioFin]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraRateioFin]
+
+GO
+
+CREATE PROCEDURE [dbo].[Usr_sp_integrarateiofin]
 AS
     DECLARE @dtocorCom DATETIME
     -- Declaração das Variaveis
@@ -2401,19 +2429,11 @@ AS
 
     DEALLOCATE xeventos
 
-
 GO
 
 USE [MT_Ibratec]
-GO
 
-/****** Object:  StoredProcedure [dbo].[Usr_SP_IntegraDI]    Script Date: 04/05/2017 14:09:03 ******/
-SET ANSI_NULLS ON
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 -- =============================================
 -- Author:		Fernando Lima
@@ -2421,7 +2441,16 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela que armazena informaçoes sobre as Declaraçoes de Importaçao 
 -- para a tabela local de Integração "Usr_ZI5010"
 -- =============================================
-CREATE PROCEDURE [dbo].[Usr_SP_IntegraDI] (@objid  AS FLOAT,
+-- Drop stored procedure if it already exists
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraDI]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraDI]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraDI]
+
+GO
+
+CREATE PROCEDURE [dbo].[Usr_sp_integradi] (@objid  AS FLOAT,
                                            @objidi AS FLOAT)
 AS
     INSERT INTO USR_ZI5010
@@ -2547,10 +2576,10 @@ AS
     WHERE  ( NF.ObjID = @objid
              AND INF.ObjID = @objidi )
 
-
 GO
 
 USE [MT_Ibratec]
+
 GO
 
 -- =============================================
@@ -2568,35 +2597,38 @@ GO
 --						
 --						
 -- =============================================
-
-IF OBJECT_ID ('[dbo].[Usr_IntegracaoCliFor]','TR') IS NOT NULL
-   DROP TRIGGER [dbo].[Usr_IntegracaoCliFor]
-GO
-
-CREATE trigger [dbo].[Usr_IntegracaoCliFor]
-on [dbo].[Crm_Clientes]
-
-after   insert, update
-as 
-begin 
-
-declare @cod as varchar(20)
-declare @versao as int
-
-select 
-	@Cod = Codcliente , 
-	@Versao = Version 
-from Inserted
-
-exec Usr_SP_IntegraCliFor @Cod, @Versao
-end
-
+IF Object_id ('[dbo].[Usr_IntegracaoCliFor]', 'TR') IS NOT NULL
+  DROP TRIGGER [dbo].[Usr_IntegracaoCliFor]
 
 GO
 
-ALTER TABLE [dbo].[Crm_Clientes] ENABLE TRIGGER [Usr_IntegracaoCliForProtheus]
+CREATE TRIGGER [dbo].[Usr_IntegracaoCliFor]
+ON [dbo].[Crm_Clientes]
+after INSERT, UPDATE
+AS
+  BEGIN
+      DECLARE @cod AS VARCHAR(20)
+      DECLARE @versao AS INT
+
+      SELECT @Cod = Codcliente,
+             @Versao = Version
+      FROM   Inserted
+
+      EXEC Usr_sp_integraclifor
+        @Cod,
+        @Versao
+  END
+
 GO
 
+ALTER TABLE [dbo].[Crm_Clientes]
+  ENABLE TRIGGER [Usr_IntegracaoCliFor]
+
+GO
+
+USE [MT_Ibratec]
+
+GO
 
 -- =============================================
 -- Nome da Trigger:	Usr_Integracao_DI		
@@ -2613,40 +2645,37 @@ GO
 --						
 --						
 -- =============================================
+IF Object_id ('[dbo].[Usr_Integracao_DI]', 'TR') IS NOT NULL
+  DROP TRIGGER [dbo].[Usr_Integracao_DI]
+
+GO
+
+CREATE TRIGGER [dbo].[Usr_Integracao_DI]
+ON [dbo].[declaracaoimportacao]
+after INSERT, UPDATE
+AS
+  BEGIN
+      DECLARE @objid AS FLOAT
+      DECLARE @objidi AS FLOAT
+
+      SELECT @objid = objidnota,
+             @objidi = objiditemnota
+      FROM   Inserted
+
+      EXEC Usr_sp_integradi
+        @objid,
+        @objidi
+  END
+
+GO
+
+ALTER TABLE [dbo].[declaracaoimportacao]
+  ENABLE TRIGGER [Usr_Integracao_DI]
+
+GO
 
 USE [MT_Ibratec]
-GO
 
-/****** Object:  Trigger [dbo].[Usr_Integracao_DI]    Script Date: 04/05/2017 14:11:38 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-
-CREATE trigger [dbo].[Usr_Integracao_DI]
-on [dbo].[declaracaoimportacao]
-
-after    insert,update
-as 
-begin 
-
-declare @objid as float
-declare @objidi as float
-
-select 
-	@objid = objidnota , 
-	@objidi = objiditemnota 
-from Inserted
-
-exec Usr_SP_IntegraDI @objid, @objidi
-end
-
-
-GO
-
-ALTER TABLE [dbo].[declaracaoimportacao] ENABLE TRIGGER [Usr_Integracao_DI]
 GO
 
 -- =============================================
@@ -2664,35 +2693,27 @@ GO
 --						
 --						
 -- =============================================
+IF Object_id ('[dbo].[Usr_IntegracaoProdutos]', 'TR') IS NOT NULL
+  DROP TRIGGER [dbo].[Usr_IntegracaoProdutos]
 
-USE [MT_Ibratec]
 GO
 
-/****** Object:  Trigger [dbo].[Usr_IntegracaoProdutos]    Script Date: 04/05/2017 14:14:38 ******/
-SET ANSI_NULLS ON
-GO
+ALTER TRIGGER [dbo].[Usr_IntegracaoProdutos]
+ON [dbo].[ItensEstoque]
+after UPDATE
+AS
+  BEGIN
+      DECLARE @cod AS VARCHAR(20)
+      DECLARE @versao AS INT
 
-SET QUOTED_IDENTIFIER ON
-GO
+      SELECT @Cod = CodItem,
+             @Versao = Version
+      FROM   Inserted
 
-
-ALTER trigger [dbo].[Usr_IntegracaoProdutos]
-on [dbo].[ItensEstoque]
-
-after    update
-as 
-begin 
-
-declare @cod as varchar(20)
-declare @versao as int
-
-select 
-	@Cod = CodItem , 
-	@Versao = Version 
-from Inserted
-
-exec Usr_SP_IntegraProdutos @cod, @versao
-end
+      EXEC Usr_sp_integraprodutos
+        @cod,
+        @versao
+  END
 
 GO
 
@@ -2701,55 +2722,128 @@ GO
 -- Create date: 04/05/2017
 -- Description:	Cria o Linked Server entre os Servidores PWSQL01 e PWSQL02
 -- =============================================
-
 USE [master]
+
+GO
+
+EXEC master.dbo.Sp_dropserver
+  @server=N'P11P01',
+  @droplogins='droplogins'
+
 GO
 
 /****** Object:  LinkedServer [P11P01]    Script Date: 04/05/2017 14:51:59 ******/
-EXEC master.dbo.sp_addlinkedserver @server = N'P11P01', @srvproduct=N'', @provider=N'SQLNCLI'
- /* For security reasons the linked server remote logins password is changed with ######## */
-EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'P11P01',@useself=N'False',@locallogin=NULL,@rmtuser=N'dbo_metrics',@rmtpassword='########'
-EXEC master.dbo.sp_addlinkedsrvlogin @rmtsrvname=N'P11P01',@useself=N'True',@locallogin=N'dbo_metrics',@rmtuser=NULL,@rmtpassword=NULL
+EXEC master.dbo.Sp_addlinkedserver
+  @server = N'P11P01',
+  @srvproduct=N'',
+  @provider=N'SQLNCLI'
+
+/* For security reasons the linked server remote logins password is changed with ######## */
+EXEC master.dbo.Sp_addlinkedsrvlogin
+  @rmtsrvname=N'P11P01',
+  @useself=N'False',
+  @locallogin=NULL,
+  @rmtuser=N'dbo_metrics',
+  @rmtpassword='########'
+
+EXEC master.dbo.Sp_addlinkedsrvlogin
+  @rmtsrvname=N'P11P01',
+  @useself=N'True',
+  @locallogin=N'dbo_metrics',
+  @rmtuser=NULL,
+  @rmtpassword=NULL
 
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'collation compatible', @optvalue=N'false'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'collation compatible',
+  @optvalue=N'false'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'data access', @optvalue=N'true'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'data access',
+  @optvalue=N'true'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'dist', @optvalue=N'false'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'dist',
+  @optvalue=N'false'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'pub', @optvalue=N'false'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'pub',
+  @optvalue=N'false'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'rpc', @optvalue=N'true'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'rpc',
+  @optvalue=N'true'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'rpc out', @optvalue=N'true'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'rpc out',
+  @optvalue=N'true'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'sub', @optvalue=N'false'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'sub',
+  @optvalue=N'false'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'connect timeout', @optvalue=N'0'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'connect timeout',
+  @optvalue=N'0'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'collation name', @optvalue=null
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'collation name',
+  @optvalue=NULL
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'lazy schema validation', @optvalue=N'false'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'lazy schema validation',
+  @optvalue=N'false'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'query timeout', @optvalue=N'0'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'query timeout',
+  @optvalue=N'0'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'use remote collation', @optvalue=N'true'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'use remote collation',
+  @optvalue=N'true'
+
 GO
 
-EXEC master.dbo.sp_serveroption @server=N'P11P01', @optname=N'remote proc transaction promotion', @optvalue=N'true'
+EXEC master.dbo.Sp_serveroption
+  @server=N'P11P01',
+  @optname=N'remote proc transaction promotion',
+  @optvalue=N'true'
+
 GO
 
 -- =============================================
@@ -2757,300 +2851,284 @@ GO
 -- Create date: 04/05/2017
 -- Description:	Insere as informações de Cadastro de Clientes e Fornecedores na tabela de Integração do Protheus "ZZ1010"
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[USR_SP_IntegraCliFor_Protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[USR_SP_IntegraCliFor_Protheus]' 
-)
-   DROP PROCEDURE [dbo].[USR_SP_IntegraCliFor_Protheus]
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[USR_SP_IntegraCliFor_Protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[USR_SP_IntegraCliFor_Protheus]')
+  DROP PROCEDURE [dbo].[USR_SP_IntegraCliFor_Protheus]
+
 GO
 
-CREATE PROCEDURE	[dbo].[USR_SP_IntegraCliFor_Protheus]
-
+CREATE PROCEDURE [dbo].[Usr_sp_integraclifor_protheus]
 AS
+    BEGIN TRY
+        DECLARE @CursorCliFor AS INT = 0
+        DECLARE @Filial VARCHAR(2)
+        DECLARE @TPLan VARCHAR(1)
+        DECLARE @CodCli VARCHAR(6)
+        DECLARE @LojCli VARCHAR(2)
+        DECLARE @NomCli VARCHAR(120)
+        DECLARE @FanCli VARCHAR(60)
+        DECLARE @TipCli VARCHAR(1)
+        DECLARE @TipFor VARCHAR(1)
+        DECLARE @EndCli VARCHAR(100)
+        DECLARE @MunCli VARCHAR(60)
+        DECLARE @EstCli VARCHAR(2)
+        DECLARE @BaiCli VARCHAR(60)
+        DECLARE @CEPCli VARCHAR(9)
+        DECLARE @CGCCli VARCHAR(18)
+        DECLARE @DATCli VARCHAR(8)
+        DECLARE @INSCli VARCHAR(15)
+        DECLARE @CodMun VARCHAR(5)
+        DECLARE @CodPai VARCHAR(5)
+        DECLARE @Pessoa VARCHAR(1)
+        DECLARE @MoedaL VARCHAR(1)
+        DECLARE @TMPVis VARCHAR(5)
+        DECLARE @TMPSTD VARCHAR(5)
+        DECLARE @B2B VARCHAR(5)
+        DECLARE @Tel VARCHAR(15)
+        DECLARE @Vincul VARCHAR(5)
+        DECLARE @IDRep VARCHAR(5)
+        DECLARE @PLCRRE VARCHAR(5)
+        DECLARE @PLFil VARCHAR(5)
+        DECLARE @TipDoc VARCHAR(1)
+        DECLARE @ImpMet VARCHAR(1)
+        DECLARE @Versao VARCHAR(8)
+        DECLARE @ContaC VARCHAR(20)
+        DECLARE @ContaF VARCHAR(20)
+        DECLARE @ContaC2 VARCHAR(20)
+        DECLARE @ContaF2 VARCHAR(20)
+        DECLARE @CTAADC VARCHAR(20)
+        DECLARE @CTAADF VARCHAR(20)
+        DECLARE @D_E_L_E_T_ VARCHAR(1)
+        DECLARE @StatusInt INT
+        DECLARE @R_E_C_N_O_ INT
+        DECLARE CursorCliFor CURSOR FOR
+          SELECT Filial,
+                 TPLan,
+                 CodCli,
+                 LojCli,
+                 NomCli,
+                 FanCli,
+                 TipCli,
+                 TipFor,
+                 EndCli,
+                 MunCli,
+                 EstCli,
+                 BaiCli,
+                 CEPCli,
+                 CGCCli,
+                 DATCli,
+                 INSCli,
+                 CodMun,
+                 CodPai,
+                 Pessoa,
+                 MoedaL,
+                 TMPVis,
+                 TMPSTD,
+                 B2B,
+                 Tel,
+                 Vincul,
+                 IDRep,
+                 PLCRRE,
+                 PLFil,
+                 TipDoc,
+                 ImpMet,
+                 Versao,
+                 ContaC,
+                 ContaF,
+                 ContaC2,
+                 ContaF2,
+                 CTAADC,
+                 CTAADF,
+                 D_E_L_E_T_,
+                 StatusInt,
+                 R_E_C_N_O_
+          FROM   USR_ZZ1010
+          WHERE  StatusInt = 0
 
-BEGIN TRY
+        OPEN CursorCliFor
 
-DECLARE @CursorCliFor AS INT = 0
+        FETCH next FROM CursorCliFor INTO @Filial,
+                                          @TPLan,
+                                          @CodCli,
+                                          @LojCli,
+                                          @NomCli,
+                                          @FanCli,
+                                          @TipCli,
+                                          @TipFor,
+                                          @EndCli,
+                                          @MunCli,
+                                          @EstCli,
+                                          @BaiCli,
+                                          @CEPCli,
+                                          @CGCCli,
+                                          @DATCli,
+                                          @INSCli,
+                                          @CodMun,
+                                          @CodPai,
+                                          @Pessoa,
+                                          @MoedaL,
+                                          @TMPVis,
+                                          @TMPSTD,
+                                          @B2B,
+                                          @Tel,
+                                          @Vincul,
+                                          @IDRep,
+                                          @PLCRRE,
+                                          @PLFil,
+                                          @TipDoc,
+                                          @ImpMet,
+                                          @Versao,
+                                          @ContaC,
+                                          @ContaF,
+                                          @ContaC2,
+                                          @ContaF2,
+                                          @CTAADC,
+                                          @CTAADF,
+                                          @D_E_L_E_T_,
+                                          @StatusInt,
+                                          @R_E_C_N_O_
 
-DECLARE @Filial VARCHAR(2)
-DECLARE @TPLan	VARCHAR(1)
-DECLARE @CodCli VARCHAR(6)
-DECLARE @LojCli VARCHAR(2)
-DECLARE @NomCli VARCHAR(120)
-DECLARE @FanCli VARCHAR(60)
-DECLARE @TipCli VARCHAR(1)
-DECLARE @TipFor VARCHAR(1)
-DECLARE @EndCli VARCHAR(100)
-DECLARE @MunCli VARCHAR(60)
-DECLARE @EstCli VARCHAR(2)
-DECLARE @BaiCli VARCHAR(60)
-DECLARE @CEPCli VARCHAR(9)
-DECLARE @CGCCli VARCHAR(18)
-DECLARE @DATCli VARCHAR(8)
-DECLARE @INSCli VARCHAR(15)
-DECLARE @CodMun VARCHAR(5)
-DECLARE @CodPai VARCHAR(5)
-DECLARE @Pessoa VARCHAR(1)
-DECLARE @MoedaL VARCHAR(1)
-DECLARE @TMPVis VARCHAR(5)
-DECLARE @TMPSTD VARCHAR(5)
-DECLARE @B2B VARCHAR(5)
-DECLARE @Tel VARCHAR(15)
-DECLARE @Vincul VARCHAR(5)
-DECLARE @IDRep VARCHAR(5)
-DECLARE @PLCRRE VARCHAR(5)
-DECLARE @PLFil VARCHAR(5)
-DECLARE @TipDoc VARCHAR(1)
-DECLARE @ImpMet VARCHAR(1)
-DECLARE @Versao VARCHAR(8)
-DECLARE @ContaC VARCHAR(20)
-DECLARE @ContaF VARCHAR(20)
-DECLARE @ContaC2 VARCHAR(20)
-DECLARE @ContaF2 VARCHAR(20)
-DECLARE @CTAADC VARCHAR(20)
-DECLARE @CTAADF VARCHAR(20)
-DECLARE @D_E_L_E_T_ VARCHAR(1)
-DECLARE @StatusInt INT
-DECLARE @R_E_C_N_O_ INT
-
-DECLARE CursorCliFor CURSOR FOR
-
-SELECT
-Filial,
-TPLan,
-CodCli,
-LojCli,
-NomCli,
-FanCli,
-TipCli,
-TipFor,
-EndCli,
-MunCli,
-EstCli,
-BaiCli,
-CEPCli,
-CGCCli,
-DATCli,
-INSCli,
-CodMun,
-CodPai,
-Pessoa,
-MoedaL,
-TMPVis,
-TMPSTD,
-B2B,
-Tel,
-Vincul,
-IDRep,
-PLCRRE,
-PLFil,
-TipDoc,
-ImpMet,
-Versao,
-ContaC,
-ContaF,
-ContaC2,
-ContaF2,
-CTAADC,
-CTAADF,
-D_E_L_E_T_,
-StatusInt,
-R_E_C_N_O_
-FROM USR_ZZ1010
-WHERE StatusInt = 0
- 
- OPEN CursorCliFor
- 
- FETCH next FROM CursorCliFor INTO
-
-@Filial,
-@TPLan,
-@CodCli,
-@LojCli,
-@NomCli,
-@FanCli,
-@TipCli,
-@TipFor,
-@EndCli,
-@MunCli,
-@EstCli,
-@BaiCli,
-@CEPCli,
-@CGCCli,
-@DATCli,
-@INSCli,
-@CodMun,
-@CodPai,
-@Pessoa,
-@MoedaL,
-@TMPVis,
-@TMPSTD,
-@B2B,
-@Tel,
-@Vincul,
-@IDRep,
-@PLCRRE,
-@PLFil,
-@TipDoc,
-@ImpMet,
-@Versao,
-@ContaC,
-@ContaF,
-@ContaC2,
-@ContaF2,
-@CTAADC,
-@CTAADF,
-@D_E_L_E_T_,
-@StatusInt,
-@R_E_C_N_O_
-
-WHILE @@FETCH_STATUS = 0
+        WHILE @@FETCH_STATUS = 0
           BEGIN
               SET @CursorCliFor = @CursorCliFor + 1
-
-			  SET XACT_ABORT ON
+              SET XACT_ABORT ON
 
               BEGIN TRAN
 
-			  INSERT INTO [P11P01].Protheus11.dbo.ZZ1010(
-ZZ1_FILIAL,
-ZZ1_TPLAN,
-ZZ1_CODCLI,
-ZZ1_LOJCLI,
-ZZ1_NOMCLI,
-ZZ1_FANCLI,
-ZZ1_TIPCLI,
-ZZ1_TIPFOR,
-ZZ1_ENDCLI,
-ZZ1_MUNCLI,
-ZZ1_ESTCLI,
-ZZ1_BAICLI,
-ZZ1_CEPCLI,
-ZZ1_CGCCLI,
-ZZ1_DATCLI,
-ZZ1_INSCLI,
-ZZ1_CODMUN,
-ZZ1_CODPAI,
-ZZ1_PESSOA,
-ZZ1_MOEDAL,
-ZZ1_TMPVIS,
-ZZ1_TMPSTD,
-ZZ1_B2B,
-ZZ1_TEL,
-ZZ1_VINCUL,
-ZZ1_ID_REP,
-ZZ1_PLCRRE,
-ZZ1_PLFIL,
-ZZ1_TIPDOC,
-ZZ1_IMPMET,
-ZZ1_VERSAO,
-ZZ1_CONTAC,
-ZZ1_CONTAF,
-ZZ1_CONTC2,
-ZZ1_CONTF2,
-ZZ1_CTAADC,
-ZZ1_CTAADF,
-D_E_L_E_T_,
-R_E_C_N_O_
-)
-VALUES(
-@Filial,
-@TPLan,
-@CodCli,
-@LojCli,
-@NomCli,
-@FanCli,
-@TipCli,
-@TipFor,
-@EndCli,
-@MunCli,
-@EstCli,
-@BaiCli,
-@CEPCli,
-@CGCCli,
-@DATCli,
-@INSCli,
-@CodMun,
-@CodPai,
-@Pessoa,
-@MoedaL,
-@TMPVis,
-@TMPSTD,
-@B2B,
-@Tel,
-@Vincul,
-@IDRep,
-@PLCRRE,
-@PLFil,
-@TipDoc,
-@ImpMet,
-@Versao,
-@ContaC,
-@ContaF,
-@ContaC2,
-@ContaF2,
-@CTAADC,
-@CTAADF,
-@D_E_L_E_T_,
-@R_E_C_N_O_
-)
+              INSERT INTO [P11P01].Protheus11.dbo.ZZ1010
+                          (ZZ1_FILIAL,
+                           ZZ1_TPLAN,
+                           ZZ1_CODCLI,
+                           ZZ1_LOJCLI,
+                           ZZ1_NOMCLI,
+                           ZZ1_FANCLI,
+                           ZZ1_TIPCLI,
+                           ZZ1_TIPFOR,
+                           ZZ1_ENDCLI,
+                           ZZ1_MUNCLI,
+                           ZZ1_ESTCLI,
+                           ZZ1_BAICLI,
+                           ZZ1_CEPCLI,
+                           ZZ1_CGCCLI,
+                           ZZ1_DATCLI,
+                           ZZ1_INSCLI,
+                           ZZ1_CODMUN,
+                           ZZ1_CODPAI,
+                           ZZ1_PESSOA,
+                           ZZ1_MOEDAL,
+                           ZZ1_TMPVIS,
+                           ZZ1_TMPSTD,
+                           ZZ1_B2B,
+                           ZZ1_TEL,
+                           ZZ1_VINCUL,
+                           ZZ1_ID_REP,
+                           ZZ1_PLCRRE,
+                           ZZ1_PLFIL,
+                           ZZ1_TIPDOC,
+                           ZZ1_IMPMET,
+                           ZZ1_VERSAO,
+                           ZZ1_CONTAC,
+                           ZZ1_CONTAF,
+                           ZZ1_CONTC2,
+                           ZZ1_CONTF2,
+                           ZZ1_CTAADC,
+                           ZZ1_CTAADF,
+                           D_E_L_E_T_,
+                           R_E_C_N_O_)
+              VALUES      ( @Filial,
+                            @TPLan,
+                            @CodCli,
+                            @LojCli,
+                            @NomCli,
+                            @FanCli,
+                            @TipCli,
+                            @TipFor,
+                            @EndCli,
+                            @MunCli,
+                            @EstCli,
+                            @BaiCli,
+                            @CEPCli,
+                            @CGCCli,
+                            @DATCli,
+                            @INSCli,
+                            @CodMun,
+                            @CodPai,
+                            @Pessoa,
+                            @MoedaL,
+                            @TMPVis,
+                            @TMPSTD,
+                            @B2B,
+                            @Tel,
+                            @Vincul,
+                            @IDRep,
+                            @PLCRRE,
+                            @PLFil,
+                            @TipDoc,
+                            @ImpMet,
+                            @Versao,
+                            @ContaC,
+                            @ContaF,
+                            @ContaC2,
+                            @ContaF2,
+                            @CTAADC,
+                            @CTAADF,
+                            @D_E_L_E_T_,
+                            @R_E_C_N_O_ )
 
-UPDATE Usr_ZZ1010
+              UPDATE Usr_ZZ1010
               SET    StatusInt = 1
               WHERE  R_E_C_N_O_ = @R_E_C_N_O_
 
-COMMIT TRAN
+              COMMIT TRAN
 
-FETCH next FROM CursorCliFor INTO
-@Filial,
-@TPLan,
-@CodCli,
-@LojCli,
-@NomCli,
-@FanCli,
-@TipCli,
-@TipFor,
-@EndCli,
-@MunCli,
-@EstCli,
-@BaiCli,
-@CEPCli,
-@CGCCli,
-@DATCli,
-@INSCli,
-@CodMun,
-@CodPai,
-@Pessoa,
-@MoedaL,
-@TMPVis,
-@TMPSTD,
-@B2B,
-@Tel,
-@Vincul,
-@IDRep,
-@PLCRRE,
-@PLFil,
-@TipDoc,
-@ImpMet,
-@Versao,
-@ContaC,
-@ContaF,
-@ContaC2,
-@ContaF2,
-@CTAADC,
-@CTAADF,
-@D_E_L_E_T_,
-@StatusInt,
-@R_E_C_N_O_
-
-       END
+              FETCH next FROM CursorCliFor INTO @Filial,
+                                                @TPLan,
+                                                @CodCli,
+                                                @LojCli,
+                                                @NomCli,
+                                                @FanCli,
+                                                @TipCli,
+                                                @TipFor,
+                                                @EndCli,
+                                                @MunCli,
+                                                @EstCli,
+                                                @BaiCli,
+                                                @CEPCli,
+                                                @CGCCli,
+                                                @DATCli,
+                                                @INSCli,
+                                                @CodMun,
+                                                @CodPai,
+                                                @Pessoa,
+                                                @MoedaL,
+                                                @TMPVis,
+                                                @TMPSTD,
+                                                @B2B,
+                                                @Tel,
+                                                @Vincul,
+                                                @IDRep,
+                                                @PLCRRE,
+                                                @PLFil,
+                                                @TipDoc,
+                                                @ImpMet,
+                                                @Versao,
+                                                @ContaC,
+                                                @ContaF,
+                                                @ContaC2,
+                                                @ContaF2,
+                                                @CTAADC,
+                                                @CTAADF,
+                                                @D_E_L_E_T_,
+                                                @StatusInt,
+                                                @R_E_C_N_O_
+          END
 
         CLOSE CursorCliFor
 
@@ -3072,22 +3150,20 @@ GO
 -- Create date: 04/05/2017
 -- Description:	Insere as informações de Cadastro de Profutos tabela de Integração do Protheus "ZZ4010"
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]' 
-)
-   DROP PROCEDURE [dbo].[Usr_SP_IntegraProdutos_Protheus]
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraProdutos_Protheus]
+
 GO
 
-
-ALTER PROCEDURE [dbo].[Usr_SP_IntegraProdutos_Protheus]
+ALTER PROCEDURE [dbo].[Usr_sp_integraprodutos_protheus]
 AS
     BEGIN TRY
         DECLARE @CursorProdutos AS INT = 0
@@ -3131,46 +3207,45 @@ AS
         DECLARE @STATUS_INTEGRACAO INT
         DECLARE @R_E_C_N_O_ INT
         DECLARE CursorProdutos CURSOR FOR
-          SELECT 
-Filial,
-Cod,
-Descricao,
-LocPad,
-UM,
-Grupo,
-PosIPI,
-Tipo,
-TipCon,
-MCustD,
-Apropr,
-TipoDE,
-Rastro,
-MRP,
-CodBar,
-Locali,
-Contra,
-Import,
-Anuent,
-TipoCQ,
-Solici,
-INSS,
-FlagSU,
-ClassV,
-Midia,
-EnvoBR,
-QtdSer,
-Ativo,
-TipCNV,
-CpoTen,
-ImpMet,
-Versao,
-Conta,
-Conta2,
-D_E_L_E_T_,
-DtInclusao,
-CodNew,
-StatusInt,
-R_E_C_N_O_
+          SELECT Filial,
+                 Cod,
+                 Descricao,
+                 LocPad,
+                 UM,
+                 Grupo,
+                 PosIPI,
+                 Tipo,
+                 TipCon,
+                 MCustD,
+                 Apropr,
+                 TipoDE,
+                 Rastro,
+                 MRP,
+                 CodBar,
+                 Locali,
+                 Contra,
+                 Import,
+                 Anuent,
+                 TipoCQ,
+                 Solici,
+                 INSS,
+                 FlagSU,
+                 ClassV,
+                 Midia,
+                 EnvoBR,
+                 QtdSer,
+                 Ativo,
+                 TipCNV,
+                 CpoTen,
+                 ImpMet,
+                 Versao,
+                 Conta,
+                 Conta2,
+                 D_E_L_E_T_,
+                 DtInclusao,
+                 CodNew,
+                 StatusInt,
+                 R_E_C_N_O_
           FROM   Usr_ZZ4010
           WHERE  StatusInt = 0
 
@@ -3213,14 +3288,13 @@ R_E_C_N_O_
                                             @D_E_L_E_T_,
                                             @DTINCLUSAO,
                                             @CODNEW,
-											@STATUS_INTEGRACAO,
+                                            @STATUS_INTEGRACAO,
                                             @R_E_C_N_O_
 
         WHILE @@FETCH_STATUS = 0
           BEGIN
               SET @CursorProdutos = @CursorProdutos + 1
-
-			  SET XACT_ABORT ON
+              SET XACT_ABORT ON
 
               BEGIN TRAN
 
@@ -3263,8 +3337,7 @@ R_E_C_N_O_
                            ZZ4_DTINCLUSAO,
                            ZZ4_CODNEW,
                            R_E_C_N_O_)
-              VALUES      ( 
-							@FILIAL,
+              VALUES      ( @FILIAL,
                             @COD,
                             @DESC,
                             @LOCPAD,
@@ -3346,7 +3419,7 @@ R_E_C_N_O_
                                                   @D_E_L_E_T_,
                                                   @DTINCLUSAO,
                                                   @CODNEW,
-												  @STATUS_INTEGRACAO,
+                                                  @STATUS_INTEGRACAO,
                                                   @R_E_C_N_O_
           END
 
@@ -3363,34 +3436,27 @@ R_E_C_N_O_
         DEALLOCATE CursorProdutos
     END CATCH
 
-
-
 GO
-
-
-
 
 -- =============================================
 -- Author:		Fernando Lima
 -- Create date: 04/05/2017
 -- Description:	Insere as informações de Cabeçalhos de Notas Fiscais na tabela de Integração do Protheus "ZZ5010"
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraNotas_Protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraNotas_Protheus]' 
-)
-   DROP PROCEDURE [dbo].[Usr_SP_IntegraNotas_Protheus]
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraNotas_Protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraNotas_Protheus]')
+  DROP PROCEDURE [dbo].[Usr_SP_IntegraNotas_Protheus]
+
 GO
 
-
-CREATE PROCEDURE [dbo].[Usr_SP_IntegraNotas_Protheus]
+CREATE PROCEDURE [dbo].[Usr_sp_integranotas_protheus]
 AS
     BEGIN Try
         DECLARE @CursorNotas AS INT = 0
@@ -3596,8 +3662,7 @@ AS
         WHILE @@FETCH_STATUS = 0
           BEGIN
               SET @CursorNotas = @CursorNotas + 1
-
-			  SET XACT_ABORT ON
+              SET XACT_ABORT ON
 
               BEGIN TRAN
 
@@ -3665,69 +3730,69 @@ AS
                            ZZ5_CODSEF,
                            ZZ5_RECSEF,
                            R_E_C_N_O_)
-              VALUES     ( @Filial,
-                           @TpLan,
-                           @NumDoc,
-                           @SerDoc,
-                           @CodCli,
-                           @Loja,
-                           @DatEmi,
-                           @EstDoc,
-                           @ValFre,
-                           @ValSeg,
-                           @ICMFre,
-                           @ValBru,
-                           @ValICM,
-                           @BasICM,
-                           @ValIPI,
-                           @BasIPI,
-                           @ValMer,
-                           @BasISS,
-                           @ValISS,
-                           @ValCSL,
-                           @ValDes,
-                           @CodCFO,
-                           @Observ,
-                           @Propri,
-                           @Tipo,
-                           @CampoA,
-                           @BasCOF,
-                           @ValCOF,
-                           @BasPIS,
-                           @ValPIS,
-                           @Cond,
-                           @TipoCL,
-                           @Especi,
-                           @ChvNfe,
-                           @DocSai,
-                           @SerSai,
-                           @ValDsc,
-                           @DatDig,
-                           @BasFre,
-                           @ValIRF,
-                           @NotOri,
-                           @SerOri,
-                           @BasINS,
-                           @ValINS,
-                           @ReduIC,
-                           @ReduIP,
-                           @DocEnt,
-                           @SerEnt,
-                           @OrigLa,
-                           @Status,
-                           @RecbMt,
-                           @TipLan,
-                           @TpFre,
-                           @ImpMet,
-                           @DtOcor,
-                           @HrOcor,
-                           @D_E_L_E_T_,
-                           @DtOcom,
-                           @DtFat,
-                           @Objid,
-                           @CodSef,
-                           @RecSef,
-                           @R_E_C_N_O_ )
+              VALUES      ( @Filial,
+                            @TpLan,
+                            @NumDoc,
+                            @SerDoc,
+                            @CodCli,
+                            @Loja,
+                            @DatEmi,
+                            @EstDoc,
+                            @ValFre,
+                            @ValSeg,
+                            @ICMFre,
+                            @ValBru,
+                            @ValICM,
+                            @BasICM,
+                            @ValIPI,
+                            @BasIPI,
+                            @ValMer,
+                            @BasISS,
+                            @ValISS,
+                            @ValCSL,
+                            @ValDes,
+                            @CodCFO,
+                            @Observ,
+                            @Propri,
+                            @Tipo,
+                            @CampoA,
+                            @BasCOF,
+                            @ValCOF,
+                            @BasPIS,
+                            @ValPIS,
+                            @Cond,
+                            @TipoCL,
+                            @Especi,
+                            @ChvNfe,
+                            @DocSai,
+                            @SerSai,
+                            @ValDsc,
+                            @DatDig,
+                            @BasFre,
+                            @ValIRF,
+                            @NotOri,
+                            @SerOri,
+                            @BasINS,
+                            @ValINS,
+                            @ReduIC,
+                            @ReduIP,
+                            @DocEnt,
+                            @SerEnt,
+                            @OrigLa,
+                            @Status,
+                            @RecbMt,
+                            @TipLan,
+                            @TpFre,
+                            @ImpMet,
+                            @DtOcor,
+                            @HrOcor,
+                            @D_E_L_E_T_,
+                            @DtOcom,
+                            @DtFat,
+                            @Objid,
+                            @CodSef,
+                            @RecSef,
+                            @R_E_C_N_O_ )
 
               UPDATE Usr_ZZ5010
               SET    StatusInt = 1
@@ -3812,8 +3877,7 @@ AS
         WHERE  R_E_C_N_O_ = @R_E_C_N_O_
         CLOSE CursorNotas
         DEALLOCATE CursorNotas
-    END Catch 
-
+    END Catch
 
 GO
 
@@ -3822,18 +3886,17 @@ GO
 -- Create date: 04/05/2017
 -- Description:	Insere as informações de Cabeçalhos de  Itens de Notas Fiscais na tabela de Integração do Protheus "ZZ3010"
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integraitensnotas_protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integraitensnotas_protheus]' 
-)
-   DROP PROCEDURE [dbo].[Usr_sp_integraitensnotas_protheus]
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integraitensnotas_protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integraitensnotas_protheus]')
+  DROP PROCEDURE [dbo].[Usr_sp_integraitensnotas_protheus]
+
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integraitensnotas_protheus]
@@ -4126,8 +4189,7 @@ AS
         WHILE @@FETCH_STATUS = 0
           BEGIN
               SET @CursorItensNotas = @CursorItensNotas + 1
-
-			  SET XACT_ABORT ON
+              SET XACT_ABORT ON
 
               BEGIN TRANSACTION
 
@@ -4428,26 +4490,23 @@ AS
         DEALLOCATE CursorItensNotas
     END Catch
 
-	-- =============================================
--- Author:		Fernando Lima
--- Create date: 04/05/2017
--- Description:	Insere as informações de Cabeçalhos de  Rateios Fiananceiros de Notas Fiscais na tabela de Integração do Protheus "ZZ3010"
--- =============================================
+    -- =============================================
+    -- Author:		Fernando Lima
+    -- Create date: 04/05/2017
+    -- Description:	Insere as informações de Cabeçalhos de  Rateios Fiananceiros de Notas Fiscais na tabela de Integração do Protheus "ZZ3010"
+    -- =============================================
+    USE [MT_Ibratec]
 
-USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integrarateiofin_protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integrarateiofin_protheus]' 
-)
-   DROP PROCEDURE [dbo].[Usr_sp_integrarateiofin_protheus]
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integrarateiofin_protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integrarateiofin_protheus]')
+  DROP PROCEDURE [dbo].[Usr_sp_integrarateiofin_protheus]
+
 GO
-
-
 
 CREATE PROCEDURE [dbo].[Usr_sp_integrarateiofin_protheus]
 AS
@@ -4626,28 +4685,25 @@ AS
         DEALLOCATE CursorRateioFin
     END Catch
 
-
 GO
 
-	-- =============================================
+-- =============================================
 -- Author:		Fernando Lima
 -- Create date: 04/05/2017
 -- Description:	Insere as informações de Cabeçalhos de  Rateios Fiananceiros de Notas Fiscais na tabela de Integração do Protheus "ZZ3010"
 -- =============================================
-
 USE [MT_Ibratec]
+
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (
-  SELECT * 
-    FROM INFORMATION_SCHEMA.ROUTINES 
-   WHERE SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integradi_protheus]'
-     AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integradi_protheus]' 
-)
-   DROP PROCEDURE [dbo].[Usr_sp_integradi_protheus]
-GO
+IF EXISTS (SELECT *
+           FROM   INFORMATION_SCHEMA.ROUTINES
+           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integradi_protheus]'
+                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integradi_protheus]')
+  DROP PROCEDURE [dbo].[Usr_sp_integradi_protheus]
 
+GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integradi_protheus]
 AS
@@ -4798,8 +4854,7 @@ AS
         WHILE @@FETCH_STATUS = 0
           BEGIN
               SET @CursorDI = @CursorDI + 1
-
-			  SET XACT_ABORT ON
+              SET XACT_ABORT ON
 
               BEGIN TRAN
 
@@ -4956,7 +5011,6 @@ AS
         WHERE  R_E_C_N_O_ = @R_E_C_N_O_
         CLOSE CursorDI
         DEALLOCATE CursorDI
-    END Catch 
+    END Catch
 
-
-GO
+GO 
