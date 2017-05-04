@@ -886,12 +886,7 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela de Cabeçalho de Notas Fiscais de Saída e Entrada
 --				Metrics "NotasFiscais, EstNotasFiscaisEntrada"  para a tabela de integração Local "Usr_ZZ5010"
 -- =============================================
--- =============================================
--- Author:		Fernando Lima
--- Create date: 15/05/2013
--- Description:	Carregas as informações sobre as alterações na tabela de cadastro de Produtos do Metrics "ItensEstoque" 
--- para a tabela de integração Local "Usr_ZZ4010"
--- =============================================
+
 -- Drop stored procedure if it already exists
 IF EXISTS (SELECT *
            FROM   INFORMATION_SCHEMA.ROUTINES
@@ -1446,6 +1441,7 @@ GO
 --          	"ItemNota e ESTItemNotaEntrada" para a tabela de integração Local "Usr_ZZ3010"
 -- =============================================
 -- Drop stored procedure if it already exists
+
 IF EXISTS (SELECT *
            FROM   INFORMATION_SCHEMA.ROUTINES
            WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraItensNotas]'
