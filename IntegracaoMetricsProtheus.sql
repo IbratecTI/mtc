@@ -548,11 +548,10 @@ GO
 --				Metrics "CRM_Clientes"  para a tabela de integração Local "Usr_ZZ1010"
 -- =============================================
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[USR_SP_IntegraCliFor]'
-                  AND SPECIFIC_NAME = N'[dbo].[USR_SP_IntegraCliFor]')
-  DROP PROCEDURE [dbo].[[USR_SP_IntegraCliFor]
+
+-- Drop stored procedure if it already exists
+
+IF OBJECT_ID('USR_SP_IntegraCliFor', 'P') IS NOT NULL DROP PROCEDURE USR_SP_IntegraCliFor
 
 GO
 
@@ -673,13 +672,9 @@ GO
 -- Description:	Carregas as informações sobre as alterações na tabela de cadastro de Produtos do Metrics "ItensEstoque" 
 -- para a tabela de integração Local "Usr_ZZ4010"
 -- =============================================
--- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraProdutos]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraProdutos]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraProdutos]
 
+-- Drop stored procedure if it already exists
+IF OBJECT_ID('Usr_sp_integraprodutos', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integraprodutos
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integraprodutos](@cod    AS VARCHAR(20),
@@ -887,13 +882,9 @@ GO
 --				Metrics "NotasFiscais, EstNotasFiscaisEntrada"  para a tabela de integração Local "Usr_ZZ5010"
 -- =============================================
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraNotasFiscais]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraNotasFiscais]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraNotasFiscais]
-
+IF OBJECT_ID('Usr_sp_integranotasfiscais', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integranotasfiscais
 GO
+
 
 ALTER PROCEDURE [dbo].[Usr_sp_integranotasfiscais]
 AS
@@ -1440,13 +1431,9 @@ GO
 --          	"ItemNota e ESTItemNotaEntrada" para a tabela de integração Local "Usr_ZZ3010"
 -- =============================================
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraItensNotas]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraItensNotas]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraItensNotas]
-
+IF OBJECT_ID('Usr_sp_integraitensnotas', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integraitensnotas
 GO
+
 
 CREATE PROCEDURE [dbo].[Usr_sp_integraitensnotas]
 AS
@@ -2287,12 +2274,7 @@ GO
 --         	 para a tabela de integração local"Usr_ZR6010"
 --=============================================
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraRateioFin]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraRateioFin]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraRateioFin]
-
+IF OBJECT_ID('Usr_sp_integrarateiofin', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integrarateiofin
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integrarateiofin]
@@ -2436,12 +2418,7 @@ GO
 -- para a tabela local de Integração "Usr_ZI5010"
 -- =============================================
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraDI]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraDI]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraDI]
-
+IF OBJECT_ID('Usr_sp_integradi', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integradi
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integradi] (@objid  AS FLOAT,
@@ -2718,6 +2695,8 @@ GO
 -- =============================================
 USE [master]
 
+
+
 GO
 
 EXEC master.dbo.Sp_dropserver
@@ -2850,13 +2829,9 @@ USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[USR_SP_IntegraCliFor_Protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[USR_SP_IntegraCliFor_Protheus]')
-  DROP PROCEDURE [dbo].[USR_SP_IntegraCliFor_Protheus]
-
+IF OBJECT_ID('Usr_sp_integraclifor_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integraclifor_protheus
 GO
+
 
 CREATE PROCEDURE [dbo].[Usr_sp_integraclifor_protheus]
 AS
@@ -3149,12 +3124,7 @@ USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraProdutos_Protheus]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraProdutos_Protheus]
-
+IF OBJECT_ID('Usr_sp_integraprodutos_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integraprodutos_protheus
 GO
 
 ALTER PROCEDURE [dbo].[Usr_sp_integraprodutos_protheus]
@@ -3442,12 +3412,7 @@ USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_SP_IntegraNotas_Protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_SP_IntegraNotas_Protheus]')
-  DROP PROCEDURE [dbo].[Usr_SP_IntegraNotas_Protheus]
-
+IF OBJECT_ID('Usr_sp_integranotas_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integranotas_protheus
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integranotas_protheus]
@@ -3885,12 +3850,7 @@ USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integraitensnotas_protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integraitensnotas_protheus]')
-  DROP PROCEDURE [dbo].[Usr_sp_integraitensnotas_protheus]
-
+IF OBJECT_ID('Usr_sp_integraitensnotas_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integraitensnotas_protheus
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integraitensnotas_protheus]
@@ -4494,12 +4454,7 @@ AS
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integrarateiofin_protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integrarateiofin_protheus]')
-  DROP PROCEDURE [dbo].[Usr_sp_integrarateiofin_protheus]
-
+IF OBJECT_ID('Usr_sp_integrarateiofin_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integrarateiofin_protheus
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integrarateiofin_protheus]
@@ -4691,12 +4646,7 @@ USE [MT_Ibratec]
 GO
 
 -- Drop stored procedure if it already exists
-IF EXISTS (SELECT *
-           FROM   INFORMATION_SCHEMA.ROUTINES
-           WHERE  SPECIFIC_SCHEMA = N'[dbo].[Usr_sp_integradi_protheus]'
-                  AND SPECIFIC_NAME = N'[dbo].[Usr_sp_integradi_protheus]')
-  DROP PROCEDURE [dbo].[Usr_sp_integradi_protheus]
-
+IF OBJECT_ID('Usr_sp_integradi_protheus', 'P') IS NOT NULL DROP PROCEDURE Usr_sp_integradi_protheus
 GO
 
 CREATE PROCEDURE [dbo].[Usr_sp_integradi_protheus]
